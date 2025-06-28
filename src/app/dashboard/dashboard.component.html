@@ -1,0 +1,19 @@
+<div class="container" style="display: flex; justify-content: center;">
+    <div>
+        <h2>Employee Dashboard</h2>
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Total Time in Hours</th>
+            </tr>
+            <tr *ngFor="let employee of employees" [ngStyle]="{'background-color': employee.TotalHours<100 ? 'red' : 'transparent'}">
+                <td>{{employee.Name}}</td>
+                <td>{{employee.TotalHours | number:'1.2-2'}}</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <h2 style="float: right;">Pie Chart</h2><br/>
+        <canvas #pieChart width="400" height="400"></canvas>
+    </div>
+</div>
